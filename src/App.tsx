@@ -8,6 +8,8 @@ import About from './components/sections/About';
 import LoadingSpinner from './components/shared/LoadingSpinner';
 import ErrorBoundary from './components/shared/ErrorBoundary';
 import { ToastNotificationContainer, showToast } from './components/shared/ToastNotification';
+import Terms from './components/sections/Terms';
+import ScrollToTop from './components/shared/ScrollToTop';
 
 // Lazy-loaded components
 const PremiumPlans = lazy(() => import('./components/sections/PremiumPlans'));
@@ -30,6 +32,7 @@ function App() {
     <Router>
       <ErrorBoundary>
         <div className="flex flex-col min-h-screen">
+          <ScrollToTop></ScrollToTop>
           <Header />
 
           <main className="flex-grow">
@@ -46,7 +49,14 @@ function App() {
                 </>
               } />
               {/* Add more routes as needed */}
+
+              <Route path="/terms" element={
+                <Suspense fallback={<LoadingSpinner size="lg" />}>
+                  <Terms />
+                </Suspense>
+              } />
             </Routes>
+
           </main>
 
           <Footer />
