@@ -9,6 +9,7 @@ import LoadingSpinner from './components/shared/LoadingSpinner';
 import ErrorBoundary from './components/shared/ErrorBoundary';
 import { ToastNotificationContainer, showToast } from './components/shared/ToastNotification';
 import Terms from './components/sections/Terms';
+import Privacy from './components/sections/Privacy';
 import ScrollToTop from './components/shared/ScrollToTop';
 
 // Lazy-loaded components
@@ -44,7 +45,7 @@ function App() {
                   <Suspense fallback={<div className="py-20 flex justify-center"><LoadingSpinner size="lg" /></div>}>
                     <PremiumPlans onSelectPlan={handleSelectPlan} />
                   </Suspense>
-                  <About />
+                  {/* <About /> */}
                   {/* <Contact /> */}
                 </>
               } />
@@ -53,6 +54,18 @@ function App() {
               <Route path="/terms" element={
                 <Suspense fallback={<LoadingSpinner size="lg" />}>
                   <Terms />
+                </Suspense>
+              } />
+
+              <Route path="/privacy" element={
+                <Suspense fallback={<LoadingSpinner size="lg" />}>
+                  <Privacy />
+                </Suspense>
+              } />
+
+              <Route path="/about" element={
+                <Suspense fallback={<LoadingSpinner size="lg" />}>
+                  <About />
                 </Suspense>
               } />
             </Routes>
