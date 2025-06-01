@@ -96,23 +96,27 @@ export const FEATURES = [
 ];
 
 export const FOOTER_LINKS = {
-  company: [
-    { name: 'About Us', path: '/about' },
-    { name: 'Careers', path: '/careers' },
-    { name: 'Press', path: '/press' },
-    { name: 'Blog', path: '/blog' }
+  company: [  
+    { name: '', path: '' },
+    { name: '', path: '' },
+    { name: '', path: '' },
+    { name: '', path: '' }
+    // { name: 'About Us', path: '/about' },
+    // { name: 'Careers', path: '/careers' },
+    // { name: 'Press', path: '/press' },
+    // { name: 'Blog', path: '/blog' }
   ],
   support: [
-    { name: 'Help Center', path: '/help' },
+    // { name: 'Help Center', path: '/help' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'FAQ', path: '/faq' },
-    { name: 'Account', path: '/account' }
+    // { name: 'Account', path: '/account' }
   ],
   legal: [
     { name: 'Terms of Service', path: '/terms' },
     { name: 'Privacy Policy', path: '/privacy' },
-    { name: 'Cookie Preferences', path: '/cookies' },
-    { name: 'Corporate Information', path: '/corporate' }
+    // { name: 'Cookie Preferences', path: '/cookies' },
+    // { name: 'Corporate Information', path: '/corporate' }
   ],
   social: [
     { name: 'Twitter', url: 'https://twitter.com' },

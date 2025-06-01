@@ -45,7 +45,7 @@ function App() {
                   <Suspense fallback={<div className="py-20 flex justify-center"><LoadingSpinner size="lg" /></div>}>
                     <PremiumPlans onSelectPlan={handleSelectPlan} />
                   </Suspense>
-                  {/* <About /> */}
+                  <About />
                   {/* <Contact /> */}
                 </>
               } />
@@ -63,7 +63,13 @@ function App() {
                 </Suspense>
               } />
 
-              <Route path="/about" element={
+              {/* <Route path="/about" element={
+                <Suspense fallback={<LoadingSpinner size="lg" />}>
+                  <About />
+                </Suspense>
+              } /> */}
+
+              <Route path="/faq" element={
                 <Suspense fallback={<LoadingSpinner size="lg" />}>
                   <About />
                 </Suspense>

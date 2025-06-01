@@ -22,7 +22,7 @@ const About: React.FC = () => {
           >
             <div className="relative">
               <img 
-                src="https://media.istockphoto.com/id/1338863489/photo/man-watching-tv-remote-control-in-hand.jpg?s=612x612&w=0&k=20&c=ul9gjYNZkgTU7KbYjai5nGwne4uuvrxcF8w7L37Hxq0=" 
+                src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
                 alt="Tune Center Team" 
                 className="rounded-lg shadow-xl"
                 loading="lazy"

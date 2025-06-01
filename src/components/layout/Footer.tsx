@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
 
           {/* Links Sections */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Company</h3>
+            {/* <h3 className="text-white font-semibold mb-4">Company</h3> */}
             <ul className="space-y-2">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.name}>
