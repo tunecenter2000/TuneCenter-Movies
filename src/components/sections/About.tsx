@@ -45,29 +45,29 @@ const About: React.FC = () => {
               About Tune Center Movies Hub
             </h2>
             <p className="text-gray-400 mb-6">
-              Founded in 2015, Tune Center Movies Hub has revolutionized the way people enjoy entertainment. Our mission is to provide the best streaming experience with a vast library of high-quality content at an affordable price.
+              Founded in 2021, Tune Center Movies Hub has revolutionized the way people enjoy entertainment. Our mission is to provide the best streaming experience with a vast library of high-quality content at an affordable price.
             </p>
             <p className="text-gray-400 mb-6">
-              What started as a small startup has grown into a global platform serving millions of subscribers worldwide. We're passionate about storytelling and committed to bringing you the best movies, TV shows, and original content.
+              What started as a small startup has grown into a global platform serving millions of subscribers worldwide. We're passionate about storytelling and committed to bringing you the TV shows, and original content.
             </p>
             
             <div className="grid grid-cols-2 gap-6 mt-8">
               <div>
-                <p className="text-[#E50914] font-bold text-4xl mb-2">50M+</p>
+                <p className="text-[#E50914] font-bold text-4xl mb-2">100+</p>
                 <p className="text-white">Happy Subscribers</p>
               </div>
               <div>
-                <p className="text-[#E50914] font-bold text-4xl mb-2">190+</p>
+                <p className="text-[#E50914] font-bold text-4xl mb-2">3+</p>
                 <p className="text-white">Countries Served</p>
               </div>
               <div>
-                <p className="text-[#E50914] font-bold text-4xl mb-2">10K+</p>
-                <p className="text-white">Movies & Shows</p>
+                <p className="text-[#E50914] font-bold text-4xl mb-2">10+</p>
+                <p className="text-white">TV & Shows</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="text-[#E50914] font-bold text-4xl mb-2">500+</p>
                 <p className="text-white">Original Productions</p>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
