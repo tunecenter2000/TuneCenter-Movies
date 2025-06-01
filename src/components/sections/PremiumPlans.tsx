@@ -1,24 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { PlanProps } from "../../utils/types";
 import { PREMIUM_PLANS } from "../../utils/constants";
 import { formatPrice } from "../../utils/helpers";
 import Card from "../shared/Card";
 import Button from "../shared/Button";
-import { QRCodeCanvas } from "qrcode.react"; // ✅ Correct import
-import Modal from "../shared/Modal"; // ✅ Ensure Modal accepts children
 
-interface PremiumPlansProps {
-  onSelectPlan: (planId: string) => void;
-}
+interface PremiumPlansProps {}
 
-const PremiumPlans: React.FC<PremiumPlansProps> = ({ }) => {
-  const [selectedPlan, setSelectedPlan] = useState<PlanProps | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const PremiumPlans: React.FC<PremiumPlansProps> = () => {
+  const RAZORPAY_KEY = "rzp_test_dsz1wdlDry3ngl"; 
 
-  const handleSelectPlan = (plan: PlanProps) => {
-    setSelectedPlan(plan);
-    setIsModalOpen(true);
+  const handleRazorpayPayment = async (plan: PlanProps) => {
+    if (!(window as any).Razorpay) {
+      alert("Razorpay SDK not loaded. Please try again.");
+      return;
+    }
+
+    const options = {
+      key: RAZORPAY_KEY,
+      amount: plan.price * 100,
+      currency: "INR",
+      name: "Tune Center Movie HUB",
+      description: `Subscription for ${plan.name}`,
+      image: "/logo.png", 
+      handler: function (response: any) {
+        alert("Payment successful! ID: " + response.razorpay_payment_id);
+      },
+      // prefill: {
+      //   name: "User Name",
+      //   email: "user@example.com",
+      //   contact: "9999999999",
+      // },
+      notes: {
+        plan_id: plan.id,
+      },
+      theme: {
+        color: "#E50914",
+      },
+    };
+
+    const rzp = new (window as any).Razorpay(options);
+    rzp.open();
   };
 
   return (
@@ -43,40 +66,11 @@ const PremiumPlans: React.FC<PremiumPlansProps> = ({ }) => {
             <PlanCard
               key={plan.id}
               plan={plan}
-              onSelect={() => handleSelectPlan(plan)}
+              onSelect={() => handleRazorpayPayment(plan)}
             />
           ))}
         </motion.div>
       </div>
-
-      {isModalOpen && selectedPlan && (
-        <Modal onClose={() => setIsModalOpen(false)}>
-          <div className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-sm mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-2 text-center">Scan to Pay</h3>
-            <p className="text-gray-400 mb-6 text-center">
-              Pay <span className="text-green-400 font-semibold text-lg">{formatPrice(selectedPlan.price)}</span> for
-              <strong className="text-white ml-1">{selectedPlan.name}</strong>
-            </p>
-
-            <div className="flex justify-center mb-6">
-              <div className="bg-white p-4 rounded-xl shadow-md">
-                <QRCodeCanvas
-                  value={`upi://pay?pa=umapathy1305-1@okicici&pn=Tune Center movie HUB&mc=123456&tid=${Date.now()}&tr=order_${selectedPlan.id}&tn=Subscription Payment&am=${selectedPlan.price}&cu=INR`}
-                  size={200}
-                />
-              </div>
-            </div>
-
-            {/* <button
-              onClick={() => setIsModalOpen(false)}
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 rounded-lg transition duration-200"
-            >
-              Close
-            </button> */}
-          </div>
-        </Modal>
-      )}
-
     </section>
   );
 };
@@ -125,7 +119,7 @@ const PlanCard: React.FC<PlanCardProps> = ({ plan, onSelect }) => {
           </ul>
 
           <Button variant={plan.isPopular ? "primary" : "outline"} fullWidth onClick={onSelect}>
-            Choose Plan
+            Pay with Razorpay
           </Button>
         </div>
       </Card>
