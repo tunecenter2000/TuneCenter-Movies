@@ -9,7 +9,7 @@ import Button from "../shared/Button";
 interface PremiumPlansProps {}
 
 const PremiumPlans: React.FC<PremiumPlansProps> = () => {
-  const RAZORPAY_KEY = "rzp_test_dsz1wdlDry3ngl"; 
+  const RAZORPAY_KEY = "rzp_live_v8uUdigWm0Aazk"; 
 
   const handleRazorpayPayment = async (plan: PlanProps) => {
     if (!(window as any).Razorpay) {

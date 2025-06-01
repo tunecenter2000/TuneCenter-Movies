@@ -20,7 +20,7 @@ export const PREMIUM_PLANS = [
   {
     id: 'basic',
     name: 'Basic',
-    price: 9.99,
+    price: 1.00,
     features: [
       'HD streaming',
       'Watch on 1 device',
