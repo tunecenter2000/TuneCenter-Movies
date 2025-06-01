@@ -109,7 +109,7 @@ export const FOOTER_LINKS = {
   support: [
     // { name: 'Help Center', path: '/help' },
     { name: 'Contact Us', path: '/contact' },
-    { name: 'FAQ', path: '/faq' },
+    // { name: 'FAQ', path: '/faq' },
     // { name: 'Account', path: '/account' }
   ],
   legal: [

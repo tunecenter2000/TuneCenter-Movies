@@ -11,6 +11,7 @@ import { ToastNotificationContainer, showToast } from './components/shared/Toast
 import Terms from './components/sections/Terms';
 import Privacy from './components/sections/Privacy';
 import ScrollToTop from './components/shared/ScrollToTop';
+import Contact from './components/sections/Contact';
 
 // Lazy-loaded components
 const PremiumPlans = lazy(() => import('./components/sections/PremiumPlans'));
@@ -72,6 +73,12 @@ function App() {
               <Route path="/faq" element={
                 <Suspense fallback={<LoadingSpinner size="lg" />}>
                   <About />
+                </Suspense>
+              } />
+              
+              <Route path="/contact" element={
+                <Suspense fallback={<LoadingSpinner size="lg" />}>
+                  <Contact />
                 </Suspense>
               } />
             </Routes>
