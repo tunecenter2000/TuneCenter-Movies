@@ -52,13 +52,13 @@ function App() {
               } />
               {/* Add more routes as needed */}
 
-              <Route path="/terms" element={
+              <Route path="/terms-and-conditions" element={
                 <Suspense fallback={<LoadingSpinner size="lg" />}>
                   <Terms />
                 </Suspense>
               } />
 
-              <Route path="/privacy" element={
+              <Route path="/privacy-policy" element={
                 <Suspense fallback={<LoadingSpinner size="lg" />}>
                   <Privacy />
                 </Suspense>

@@ -113,8 +113,8 @@ export const FOOTER_LINKS = {
     // { name: 'Account', path: '/account' }
   ],
   legal: [
-    { name: 'Terms of Service', path: '/terms' },
-    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Terms of Service', path: '/terms-and-conditions' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
     // { name: 'Cookie Preferences', path: '/cookies' },
     // { name: 'Corporate Information', path: '/corporate' }
   ],
